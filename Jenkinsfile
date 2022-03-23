@@ -21,7 +21,7 @@ pipeline {
         } 
     stage('runimage') {
             steps {
-                sh 'docker run -t -v "/var/lib/docker/volumes/" haleema/docker'
+                sh 'docker run -t haleema/docker'
             }
          }    
     stage('pushimage') {
