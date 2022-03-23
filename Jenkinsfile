@@ -14,6 +14,11 @@ pipeline {
                 sh 'docker build -t haleema/docker:latest .'
             }
         } 
+    stage('pushimage') {
+            steps {
+                sh 'docker push haleema/docker:latest'
+            }
+        }     
     
     }
 }
