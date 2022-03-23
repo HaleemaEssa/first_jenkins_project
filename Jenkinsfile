@@ -23,7 +23,12 @@ pipeline {
             steps {
                 sh 'docker push haleema/docker:latest'
             }
-        }     
+        }
+         stage('runimage') {
+            steps {
+                sh 'docker run -v "${PWD}:/data" -it --rm haleema/docker'
+            }
+         }
     
     }
     post {
