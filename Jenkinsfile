@@ -19,16 +19,17 @@ pipeline {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         } 
+    stage('runimage') {
+            steps {
+                sh 'docker run -v "${PWD}:/data" -it --rm haleema/docker'
+            }
+         }    
     stage('pushimage') {
             steps {
                 sh 'docker push haleema/docker:latest'
             }
         }
-         stage('runimage') {
-            steps {
-                sh 'docker run -v "${PWD}:/data" -it --rm haleema/docker'
-            }
-         }
+         
     
     }
     post {
