@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS=credentials('haleema-dockerhub')
+    }
     stages {
         stage('GitClone') {
             steps {
