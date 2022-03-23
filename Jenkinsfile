@@ -8,7 +8,7 @@ pipeline {
         }
     stage('Createdockerimage') {
             steps {
-                sh 'docker build -t docjen .'
+                sh 'sudo docker build -t docjen .'
             }
         } 
     
