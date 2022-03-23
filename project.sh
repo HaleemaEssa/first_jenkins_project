@@ -1,1 +1,1 @@
-echo "this is my first jenkins project5555"
+echo "this is my first jenkins project6666"
