@@ -21,7 +21,7 @@ pipeline {
         } 
     stage('runimage') {
             steps {
-                sh 'docker run -v "${PWD}:/data" -it --rm haleema/docker'
+                sh 'docker run -it --rm haleema/docker'
             }
          }    
     stage('pushimage') {
