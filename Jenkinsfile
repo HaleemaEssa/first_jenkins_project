@@ -8,7 +8,7 @@ pipeline {
         }
     stage('Createdockerimage') {
             steps {
-                sh 'docker build -t docjen .'
+                sh 'docker build -t haleema/docker:latest .'
             }
         } 
     
