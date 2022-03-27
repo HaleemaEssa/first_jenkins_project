@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     environment {
         DOCKERHUB_CREDENTIALS=credentials('haleema-dockerhub')
     }
@@ -24,11 +24,7 @@ pipeline {
                 sh 'docker run -t haleema/docker'
             }
          }    
-    stage('runimage on raspberry') {
-            steps {
-                sh 'docker -H ssh root@192.168.0.21 run -t haleema/docker'
-            }
-         }        
+        
     stage('pushimage') {
             steps {
                 sh 'docker push haleema/docker:latest'
