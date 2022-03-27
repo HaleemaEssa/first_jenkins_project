@@ -26,7 +26,7 @@ pipeline {
          }    
     stage('runimage on raspberry') {
             steps {
-                sh "docker -H ssh://root@192.168.0.21 run -t haleema/docker"
+                sh 'docker -H ssh root@192.168.0.21 run -t haleema/docker'
             }
          }        
     stage('pushimage') {
