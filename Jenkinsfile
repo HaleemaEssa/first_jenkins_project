@@ -5,6 +5,7 @@ pipeline {
         final String staging_docker_host = "ssh://root@192.168.0.21"
     }
     stages {
+     withEnv(["DOCKER_HOST=${staging_docker_host}"]) {
         stage('GitClone') {
             steps {
                 git branch: 'main', url: 'https://github.com/HaleemaEssa/first_jenkins_project.git'
@@ -22,7 +23,6 @@ pipeline {
         } 
         
     stage('runimage') {
-        withEnv(["DOCKER_HOST=${staging_docker_host}"]) {
          
             steps {
                 sh 'docker run --privileged -t haleema/docker'
