@@ -21,7 +21,7 @@ pipeline {
         } 
     stage('runimage') {
             steps {
-                sh 'docker run -t haleema/docker'
+                sh 'docker run --privileged -t haleema/docker'
             }
          }    
         
