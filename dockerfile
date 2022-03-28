@@ -23,8 +23,8 @@ RUN apt-get install -y python3-pip libpq-dev python-dev
 RUN python -m pip install --upgrade pip setuptools wheel
 RUN apt-get update -qy && apt-get install -qy \
 git \
-python \
-python-rpi.gpio
+python3 \
+python3-rpi.gpio
 #RUN pip3 install pandas
 COPY . .
 #CMD ["sensorbooth.py"]
