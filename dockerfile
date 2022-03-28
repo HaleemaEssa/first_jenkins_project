@@ -18,8 +18,8 @@ RUN pip3 install adafruit-circuitpython-dht
 #RUN git clone https://github.com/adafruit/Adafruit_Python_DHT.git && \
 #	cd Adafruit_Python_DHT && \
 #	python setup.py install
-RUN apt-get install -y python-pip python-dev build-essential
-RUN apt-get install -y python-pip libpq-dev python-dev
+RUN apt-get install -y python3-pip python-dev build-essential
+RUN apt-get install -y python3-pip libpq-dev python-dev
 RUN python -m pip install --upgrade pip setuptools wheel
 RUN apt-get update -qy && apt-get install -qy \
 git \
