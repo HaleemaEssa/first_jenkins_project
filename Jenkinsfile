@@ -2,7 +2,6 @@ pipeline {
     agent { label "linuxslave1" }
     environment {
         DOCKERHUB_CREDENTIALS=credentials('haleema-dockerhub')
-       #final String staging_docker_host = "ssh://root@192.168.0.21"
     }
     stages {
         stage('GitClone') {
