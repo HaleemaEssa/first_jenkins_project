@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label "linuxslave1" }
     environment {
         DOCKERHUB_CREDENTIALS=credentials('haleema-dockerhub')
     }
