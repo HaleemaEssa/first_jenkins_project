@@ -3,6 +3,6 @@ WORKDIR /usr/app/
 COPY . .
 # RUN python3 -m pip install pika --upgrade
 RUN apt-get clean
-RUN apt-get --allow-unauthenticated update -y
+RUN apt-get update --allow-unauthenticated -y
 CMD ["p.py"]
 ENTRYPOINT ["python3"]
