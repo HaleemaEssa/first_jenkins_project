@@ -32,7 +32,7 @@ GPIO.setup(channel12, GPIO.IN)
 #GPIO.setup(channel14, GPIO.IN)
 
 credentials = pika.PlainCredentials('haleema', '4chyst')
-parameters = pika.ConnectionParameters('192.168.0.115',
+parameters = pika.ConnectionParameters('192.168.0.126',
                                    5672,
                                    '/',
                                    credentials)
