@@ -23,8 +23,8 @@ SENSOR_PIN = D5
    # print(f"Temperature= {temperature:.2f}°C")
 
 #GPIO SETUP
-channel1 = 6 #for sound
-channel12 =12 #for flame
+channel1 = 27 #for sound
+channel12 = 22 #for flame
 #channel14=4
 GPIO.setmode(GPIO.BCM)  
 GPIO.setup(channel1, GPIO.IN)
