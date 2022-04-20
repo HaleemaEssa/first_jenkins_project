@@ -30,7 +30,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel1, GPIO.IN)
 GPIO.setup(channel12, GPIO.IN)
 #GPIO.setup(channel14, GPIO.IN)
-
+GPIO.setup(channel25, GPIO.OUT)
+channel25 =25 #for relay
 credentials = pika.PlainCredentials('haleema', '4chyst')
 parameters = pika.ConnectionParameters('192.168.0.126',
                                    5672,
@@ -56,8 +57,14 @@ GPIO.add_event_callback(channel1, callback1)  # assign function to GPIO PIN, Run
 
 def callback2(channel12):
     if GPIO.input(channel12):
+        GPIO.output(25,GPIO.LOW)
+        time.sleep(2)    
         return('0')
+        
     else:
+        print("led on")
+        GPIO.output(25,GPIO.HIGH)
+        time.sleep(2)
         return('1')
     return flame    #
     flame=0
